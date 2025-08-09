@@ -1,0 +1,5 @@
+**pycache**
+
+# model
+src/models/*.ckpt
+src/models/adaface-ir_50.onnx

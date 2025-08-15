@@ -10,12 +10,9 @@ class FaceRecognition():
         self.session = ort.InferenceSession(self.recognizer_model)
 
     def get_face_feature(self, face):
-
         face = preprocessed_face(face)
-
         ort_inputs = {self.session.get_inputs()[0].name: face}
         face_feature = self.session.run(None, ort_inputs)[0][0]
-
         return face_feature
     
     def get_similarity(self, face_feature, features):
